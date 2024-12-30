@@ -1,10 +1,14 @@
 import {Component, Inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-attributes',
   templateUrl: './attributes.component.html',
   standalone: true,
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./attributes.component.css']
 })
 export class AttributesComponent {
@@ -19,9 +23,15 @@ export class AttributesComponent {
 
 interface Attributes {
   strength: number
+  strength_bonus: number
   dexterity: number
+  dexterity_bonus: number
   constitution: number
+  constitution_bonus: number
   intelligence: number
+  intelligence_bonus: number
   wisdom: number
+  wisdom_bonus: number
   charisma: number
+  charisma_bonus: number
 }

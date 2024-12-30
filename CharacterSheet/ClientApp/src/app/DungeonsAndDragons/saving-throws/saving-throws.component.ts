@@ -1,10 +1,14 @@
 import {Component, Inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-saving-throws',
   templateUrl: './saving-throws.component.html',
   standalone: true,
+  imports: [
+    NgIf,
+  ],
   styleUrls: ['./saving-throws.component.css']
 })
 export class SavingThrowsComponent {
@@ -18,10 +22,18 @@ export class SavingThrowsComponent {
 }
 
 interface SavingThrows {
-  strength: number,
-  dexterity: number,
-  constitution: number,
-  intelligence: number,
-  wisdom: number,
+  strength: number
+  strength_prof: boolean
+  dexterity: number
+  dexterity_prof: boolean
+  constitution: number
+  constitution_prof: boolean
+  intelligence: number
+  intelligence_prof: boolean
+  wisdom: number
+  wisdom_prof: boolean
   charisma: number
+  charisma_prof: boolean
+  inspirations: number
+  proficiency: number
 }

@@ -40,9 +40,7 @@ public class DnDCharacterController : Controller
                 Description = "Humans are the most adaptable and ambitious people"
             },
             alignment = 0,
-            experience = 0,
-            inspirations = 0,
-            proficiency = 0
+            experience = 0
         });
     }
 
@@ -52,11 +50,17 @@ public class DnDCharacterController : Controller
         return Json(new
         {
             strength = 10,
-            dexterity = 10,
-            constitution = 10,
-            intelligence = 10,
+            strength_bonus = 0,
+            dexterity = 14,
+            dexterity_bonus = 2,
+            constitution = 18,
+            constitution_bonus = +4,
+            intelligence = 7,
+            intelligence_bonus = -2,
             wisdom = 10,
-            charisma = 10
+            wisdom_bonus = 0,
+            charisma = 13,
+            charisma_bonus = 1
         });
     }
 
@@ -142,34 +146,126 @@ public class DnDCharacterController : Controller
             constitution = 0,
             intelligence = 0,
             wisdom = 0,
-            charisma = 0
+            charisma = 0,
+            inspirations = 0,
+            proficiency = 0
         });
     }
 
     [HttpGet("{id}")]
     public IActionResult Skills(int? id)
     {
-        return Json(new
+        return Json(new List<Skill>
         {
-            acrobatics = 1,
-            animal_handle = 1,
-            arcana = 1,
-            athletics = 1,
-            deception = 1,
-            history = 1,
-            insight = 1,
-            intimidation = 1,
-            investigating = 1,
-            medicine = 1,
-            nature = 1,
-            perception = 1,
-            performance = 1,
-            persuasion = 1,
-            religion = 1,
-            sleight_of_hand = 1,
-            stealth = 1,
-            survival = 1,
-            passive_wisdom = 1
+            new()
+            {
+                SkillName = "Acrobatics",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Animal Handling",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Arcana",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Athletics",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Deception",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "History",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Insight",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Intimidation",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Investigation",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Medicine",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Nature",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Perception",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Performance",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Persuasion",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Religion",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Sleight of Hand",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Stealth",
+                Value = 1,
+                Proficiency = true
+            },
+            new()
+            {
+                SkillName = "Survival",
+                Value = 1,
+                Proficiency = true
+            }
+
         });
     }
 

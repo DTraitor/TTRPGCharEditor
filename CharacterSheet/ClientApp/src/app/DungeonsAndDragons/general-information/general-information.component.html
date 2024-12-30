@@ -1,3 +1,48 @@
-<p>general-information works!</p>
+<div style="display: flex; gap: 10px" *ngIf="information">
+  <div>
+    <h4>Dungeon and Dragons</h4>
+    {{ information.name }}
+    <br/>
+    Character Name
+  </div>
+  <div class="info-grid">
+    <div>
+      <div>
+        {{ information.classes[0].name}}
+        {{ information.classes[0].level}}
+      </div>
+      Class & Level
+    </div>
+    <div>
+      <div>
+        {{ information.background.name }}
+      </div>
+      Background
+    </div>
+    <div>
+      <div>
+        {{ information.player }}
+      </div>
+      Player Name
+    </div>
+    <div>
+      <div>
+        {{ information.race.name }}
+      </div>
+      Race
+    </div>
+    <div>
+      <div>
+        {{ information.alignment }}
+      </div>
+      Alignment
+    </div>
+    <div>
+      <div>
+        {{ information.experience }}
+      </div>
+      Experience Points
+    </div>
+  </div>
+</div>
 
-{{ JSON.stringify(information) }}

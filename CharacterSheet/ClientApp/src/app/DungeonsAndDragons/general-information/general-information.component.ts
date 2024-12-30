@@ -1,10 +1,14 @@
 import {Component, Inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-general-information',
   templateUrl: './general-information.component.html',
   standalone: true,
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./general-information.component.css']
 })
 export class GeneralInformationComponent {
@@ -27,8 +31,6 @@ interface TopSide {
   race: Race;
   alignment: Alignment;
   experience: number;
-  inspirations: number;
-  proficiency: number;
 }
 
 interface DndClass {
