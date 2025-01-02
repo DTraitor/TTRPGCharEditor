@@ -1,39 +1,32 @@
 import {Component, Inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {NgIf} from "@angular/common";
+import {NgFor, NgIf} from "@angular/common";
+import {
+  SavingThrow,
+  SavingThrowStandaloneComponent
+} from "../saving-throw-standalone/saving-throw-standalone.component";
+import {AttributeStandaloneComponent} from "../attribute-standalone/attribute-standalone.component";
 
 @Component({
   selector: 'app-saving-throws',
   templateUrl: './saving-throws.component.html',
   standalone: true,
   imports: [
+    SavingThrowStandaloneComponent,
+    NgFor,
     NgIf,
+    AttributeStandaloneComponent,
   ],
   styleUrls: ['./saving-throws.component.css']
 })
 export class SavingThrowsComponent {
-  public information: SavingThrows | undefined;
+  public information: SavingThrow[] = []
 
   constructor(http: HttpClient, @Inject('DND_API') apiUrl: string) {
-    http.get<SavingThrows>(apiUrl + 'SavingThrows/' + 0).subscribe(result => {
+    http.get<SavingThrow[]>(apiUrl + 'SavingThrows/' + 0).subscribe(result => {
       this.information = result;
     }, error => console.error(error));
   }
-}
 
-interface SavingThrows {
-  strength: number
-  strength_prof: boolean
-  dexterity: number
-  dexterity_prof: boolean
-  constitution: number
-  constitution_prof: boolean
-  intelligence: number
-  intelligence_prof: boolean
-  wisdom: number
-  wisdom_prof: boolean
-  charisma: number
-  charisma_prof: boolean
-  inspirations: number
-  proficiency: number
+  protected readonly JSON = JSON;
 }

@@ -1,38 +1,3 @@
 <div style="display: flex; text-align: center;flex-direction: column" *ngIf="information">
-  <div>
-    <div>{{information.inspirations}} Inspiration</div>
-  </div>
-  <div>
-    <div>{{information.proficiency}} Proficiency</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.strength_prof}}">
-    <div>{{information.strength}}</div>
-    <div>Strength</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.dexterity_prof}}">
-    <div>{{information.dexterity}}</div>
-    <div>Dexterity</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.constitution_prof}}">
-    <div>{{information.constitution}}</div>
-    <div>Constitution</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.intelligence_prof}}">
-    <div>{{information.intelligence}}</div>
-    <div>Intelligence</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.wisdom_prof}}">
-    <div>{{information.wisdom}}</div>
-    <div>Wisdom</div>
-  </div>
-  <div style="display: flex; justify-content: center; gap: 10px">
-    <input type="checkbox" checked="{{information.charisma_prof}}">
-    <div>{{information.charisma}}</div>
-    <div>Charisma</div>
-  </div>
+  <app-saving-throw-standalone *ngFor="let attribute of information" [information]="attribute"></app-saving-throw-standalone>
 </div>

@@ -1,5 +1,6 @@
 ﻿using CharacterSheet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Attribute = CharacterSheet.Models.Attribute;
 
 namespace CharacterSheet.Controllers;
 
@@ -47,20 +48,44 @@ public class DnDCharacterController : Controller
     [HttpGet("{id}")]
     public IActionResult Attributes(int? id)
     {
-        return Json(new
+        return Json(new List<Attribute>
         {
-            strength = 10,
-            strength_bonus = 0,
-            dexterity = 14,
-            dexterity_bonus = 2,
-            constitution = 18,
-            constitution_bonus = +4,
-            intelligence = 7,
-            intelligence_bonus = -2,
-            wisdom = 10,
-            wisdom_bonus = 0,
-            charisma = 13,
-            charisma_bonus = 1
+            new()
+            {
+                AttributeName = "Strength",
+                Value = 10,
+                Bonus = 0
+            },
+            new()
+            {
+                AttributeName = "Dexterity",
+                Value = 14,
+                Bonus = 2
+            },
+            new()
+            {
+                AttributeName = "Constitution",
+                Value = 18,
+                Bonus = 4
+            },
+            new()
+            {
+                AttributeName = "Intelligence",
+                Value = 7,
+                Bonus = -2
+            },
+            new()
+            {
+                AttributeName = "Wisdom",
+                Value = 10,
+                Bonus = 0
+            },
+            new()
+            {
+                AttributeName = "Charisma",
+                Value = 13,
+                Bonus = 1
+            },
         });
     }
 
@@ -139,16 +164,44 @@ public class DnDCharacterController : Controller
     [HttpGet("{id}")]
     public IActionResult SavingThrows(int? id)
     {
-        return Json(new
+        return Json(new List<SavingThrow>
         {
-            strength = 0,
-            dexterity = 0,
-            constitution = 0,
-            intelligence = 0,
-            wisdom = 0,
-            charisma = 0,
-            inspirations = 0,
-            proficiency = 0
+            new ()
+            {
+                AttributeName = "Strength",
+                Value = 0,
+                Proficiency = false
+            },
+            new ()
+            {
+                AttributeName = "Dexterity",
+                Value = 0,
+                Proficiency = false
+            },
+            new ()
+            {
+                AttributeName = "Constitution",
+                Value = 0,
+                Proficiency = false
+            },
+            new ()
+            {
+                AttributeName = "Intelligence",
+                Value = 0,
+                Proficiency = false
+            },
+            new ()
+            {
+                AttributeName = "Wisdom",
+                Value = 0,
+                Proficiency = false
+            },
+            new ()
+            {
+                AttributeName = "Charisma",
+                Value = 0,
+                Proficiency = false
+            },
         });
     }
 
@@ -306,6 +359,16 @@ public class DnDCharacterController : Controller
                 Damage = "1d4",
                 DamageType = "Piercing"
             }
+        });
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult Bonuses(int? id)
+    {
+        return Json( new
+        {
+            Inspiration = 10,
+            Proficiency = 10
         });
     }
 }
