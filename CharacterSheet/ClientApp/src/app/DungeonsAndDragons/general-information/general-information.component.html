@@ -1,11 +1,11 @@
-<div style="display: flex; gap: 10px" *ngIf="information">
+<div style="display: flex; gap: 10px; justify-content: space-between" *ngIf="information">
   <div>
     <h4>Dungeon and Dragons</h4>
     {{ information.name }}
     <br/>
     Character Name
   </div>
-  <div class="info-grid">
+  <div class="info-grid" style="align-self: flex-end">
     <div>
       <div>
         {{ information.classes[0].name}}
