@@ -1,10 +1,14 @@
 import {Component, Inject} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-health',
   templateUrl: './health.component.html',
   standalone: true,
+  imports: [
+    NgIf
+  ],
   styleUrls: ['./health.component.css']
 })
 export class HealthComponent {

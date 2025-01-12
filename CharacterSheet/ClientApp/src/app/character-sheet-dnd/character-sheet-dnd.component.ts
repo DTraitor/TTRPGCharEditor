@@ -3,6 +3,8 @@ import {GeneralInformationComponent} from "../DungeonsAndDragons/general-informa
 import {AttributesComponent} from "../DungeonsAndDragons/attributes/attributes.component";
 import {SavingThrowsComponent} from "../DungeonsAndDragons/saving-throws/saving-throws.component";
 import {SkillsComponent} from "../DungeonsAndDragons/skills/skills.component";
+import {BonusesComponent} from "../DungeonsAndDragons/bonuses/bonuses.component";
+import {HealthComponent} from "../DungeonsAndDragons/health/health.component";
 
 @Component({
   selector: 'app-character-sheet-dnd',
@@ -14,6 +16,8 @@ import {SkillsComponent} from "../DungeonsAndDragons/skills/skills.component";
     AttributesComponent,
     SavingThrowsComponent,
     SkillsComponent,
+    BonusesComponent,
+    HealthComponent,
   ]
 })
 export class CharacterSheetDndComponent {

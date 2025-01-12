@@ -367,7 +367,7 @@ public class DnDCharacterController : Controller
     {
         return Json( new
         {
-            Inspiration = 10,
+            Inspirations = 10,
             Proficiency = 10
         });
     }

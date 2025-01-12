@@ -1,6 +1,4 @@
-<div>
-  <div>{{information.inspirations}} Inspiration</div>
-</div>
-<div>
-  <div>{{information.proficiency}} Proficiency</div>
+<div class="flex flex-column text-center justify-content-evenly" style="height: 100%" *ngIf="information">
+  <div class="border border-black" style="margin: 10px">{{information.inspirations}} Inspiration</div>
+  <div class="border border-black" style="margin: 10px">{{information.proficiency}} Proficiency</div>
 </div>

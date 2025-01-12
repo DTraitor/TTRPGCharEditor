@@ -1,12 +1,14 @@
 import {Component, Inject} from '@angular/core';
-import {SavingThrow} from "../saving-throw-standalone/saving-throw-standalone.component";
-import * as http from "node:http";
 import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-bonuses',
   templateUrl: './bonuses.component.html',
   styleUrls: ['./bonuses.component.css'],
+  imports: [
+    NgIf
+  ],
   standalone: true
 })
 export class BonusesComponent {

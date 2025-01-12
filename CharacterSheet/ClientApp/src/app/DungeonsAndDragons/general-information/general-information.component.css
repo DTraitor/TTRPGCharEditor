@@ -1,10 +1,6 @@
-.info-row {
-  display: flex;
-  gap: 20px;
-}
-
 .info-grid {
   display: grid;
+  align-self: flex-end;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;

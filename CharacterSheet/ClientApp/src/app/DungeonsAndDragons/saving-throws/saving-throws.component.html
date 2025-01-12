@@ -1,3 +1,3 @@
-<div style="display: flex; text-align: center; flex-direction: column; justify-content: space-between; height: 100%" *ngIf="information">
+<div class="flex flex-column text-center justify-content-evenly border border-black" style="height: fit-content; padding: 10px" *ngIf="information">
   <app-saving-throw-standalone *ngFor="let attribute of information" [information]="attribute"></app-saving-throw-standalone>
 </div>
